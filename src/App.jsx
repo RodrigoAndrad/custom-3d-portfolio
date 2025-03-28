@@ -1,14 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { useState } from "react"
 import { Home, About, Projects, Contact } from "./pages"
 import Navbar from "./components/Navbar"
 
 const App = () => {
+  const [isRotating, setIsRotating] = useState(false);
+  const [bgColorStage, setBgColorStage] = useState(0);
   return (
-    <main className='h-screen w-screen bg-amber-300/0'>
+    <main className='h-screen w-screen'>
       <Router>
-        <Navbar />
+        <Navbar isRotating={isRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage}/>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home isRotating={isRotating} setIsRotating={setIsRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage}/>} />
           <Route
             path='/*'
             element={

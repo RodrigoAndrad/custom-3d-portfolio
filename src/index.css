@@ -70,6 +70,3 @@ button:focus-visible {
   }
 }
 
-@theme {
-  --font-logo: "RSFont","sans-serif";
-}
