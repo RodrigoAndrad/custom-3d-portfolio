@@ -25,7 +25,9 @@ const HomeInfo = ({ bgColorStage }) => {
                 <h1 className='pt-2'>Sobre</h1>
                 <p className='p-4 text-left'>
                     Olá. Me chamo Rodrigo e sou desenvolvedor de software há mais de 15 anos.<br />
-                    Ao longo desse tempo trabalhei<br /> 
+                </p>
+                <p className='p-4 text-left'>
+                    Ao longo desse tempo trabalhei<br />
                     com diversas linguagens de <br />
                     programação, atuei como professor <br />
                     universitário, gerenciei projetos,<br />
@@ -33,13 +35,13 @@ const HomeInfo = ({ bgColorStage }) => {
                     diferentes segmentos do mercado.
                 </p>
                 <p className='p-4 text-left'>
-                    Sou proficiente em diversas tecnologias, atuo tanto em front-end como em <br />
-                    back-end, assim como em arquitetura de<br />
-                    sistemas e alguns aspectos de infraestrutura.
+                    Sou proficiente em diversas tecnologias, atuo tanto em front-end como em back-end,<br />
+                    assim como em arquitetura de sistemas <br />
+                    e alguns aspectos de infraestrutura.
                 </p>
                 <p className='p-4 text-left'>
-                    Conheço metodologias de projetos, boas práticas de testes,<br />
-                    tecnologias em nuvem, integração contínua e implantação contínua.
+                    Conheço metodologias de projetos, boas <br />
+                    práticas de testes, tecnologias em nuvem, integração contínua e implantação contínua.
                 </p>
                 <button className='w-[50%] absolute bottom-0 right-[10%]'>Para saber mais visite a área SOBRE no menu de navegação, aperte a tecla "S" em seu teclado ou use o Scanner.</button>
             </div>

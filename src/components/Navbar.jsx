@@ -36,12 +36,12 @@ const Navbar = ({isRotating, bgColorStage, ...props}) => {
   
 
   return (
-    <header className='flex justify-between items-center w-full absolute top-0 bg-transparent right-0 left-0 z-110'>
+    <header className='flex justify-between items-center w-full absolute top-0 bg-transparent right-0 left-0 z-110 select-none'>
       <NavLink to='/' className={`mt-4 ml-4 w-[15%] h-20 rounded-lg ${(bgColorStage === 0) ? 'bg-amber-300/20' : 'bg-white'} items-center justify-center flex font-bold shadow-lg`}>
         <Canvas className={`z-110 w-[55%] h-screen bg-transparent`}
           camera={{ near: 0.1, far: 1000 }}
         >
-          <Suspense fallback={<Loader size={10}/>} >
+          <Suspense fallback={<Loader size={20}/>} >
             <directionalLight position={[1, 1, 1]} intensity={2} />
             <ambientLight intensity={0.5} />
             {<hemisphereLight skyColor={'#b1e1ff'} groundColor={'#000000'} intensity={1} />}

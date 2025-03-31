@@ -33,9 +33,10 @@ const HomeProjectsInfo = ({ bgColorStage }) => {
                     Desempenhei diferentes papéis em uma<br />
                     ampla gama de projetos participando<br />
                     como divulgador, como gerente de<br />
-                    projetos, como desenvolvedor back-end,<br />
-                    como desenvolvedor front-end, como<br />
-                    desenvolvedor fullstack, sempre buscando<br />
+                    projetos, como desenvolvedor<br />
+                    back-end,como desenvolvedor<br />
+                    front-end, como desenvolvedor <br />
+                    fullstack, sempre buscando<br />
                     contribuir ativamente para o sucesso de<br />
                     cada projeto.
                 </p>

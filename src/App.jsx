@@ -5,13 +5,22 @@ import Navbar from "./components/Navbar"
 
 const App = () => {
   const [isRotating, setIsRotating] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false)
   const [bgColorStage, setBgColorStage] = useState(0);
   return (
     <main className='h-screen w-screen'>
       <Router>
         <Navbar isRotating={isRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage}/>
         <Routes>
-          <Route path='/' element={<Home isRotating={isRotating} setIsRotating={setIsRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage}/>} />
+          <Route path='/' element={
+            <Home 
+              isRotating={isRotating} 
+              setIsRotating={setIsRotating} 
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
+              bgColorStage={bgColorStage} 
+              setBgColorStage={setBgColorStage}/>} 
+            />
           <Route
             path='/*'
             element={

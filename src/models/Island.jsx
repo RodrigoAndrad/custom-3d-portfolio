@@ -6,7 +6,7 @@ import { a } from '@react-spring/three'
 import islandScene from '../assets/3d/low_poly_flying_island.glb'
 
 const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
-  
+
   const islandRef = useRef(0);
 
   const { gl, viewport } = useThree();
@@ -36,26 +36,41 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     e.preventDefault();
 
     if (isRotating) {
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      try {
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
-      const delta = (clientX - lastX.current) / viewport.width;
+        const delta = (clientX - lastX.current) / viewport.width;
 
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
-      lastX.current = clientX;
-      rotationSpeed.current = delta * 0.01 * Math.PI;
+        islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+        lastX.current = clientX;
+        rotationSpeed.current = delta * 0.01 * Math.PI;
+      } catch {
+        (e) => {
+          console.warn("Lost Island Reference")
+        }
+      }
+
     }
   }
 
   const handleKeyDown = (e) => {
-    if (e.key === 'ArrowLeft') {
-      if (!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-      rotationSpeed.current = 0.0125
-    } else if (e.key === 'ArrowRight') {
-      if (!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current = -0.0125
-    } 
+    try {
+      if (e.key === 'ArrowLeft') {
+        if (!isRotating) setIsRotating(true);
+        islandRef.current.rotation.y += 0.01 * Math.PI;
+        rotationSpeed.current = 0.0125
+      } else if (e.key === 'ArrowRight') {
+        if (!isRotating) setIsRotating(true);
+        islandRef.current.rotation.y -= 0.01 * Math.PI;
+        rotationSpeed.current = -0.0125
+      }
+    } catch {
+      (e) => {
+        console.warn("Lost Island Reference")
+      }
+
+    }
+
   }
 
   const handleKeyUp = (e) => {
