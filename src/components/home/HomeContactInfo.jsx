@@ -27,7 +27,7 @@ const HomeContactInfo = ({ bgColorStage }) => {
                     Entre em contato por um dos canais:
                 </h2>
                 <span className='p-4 text-left mt-2'>
-                    <p>Email: rodrigo.s.andrade@gmail.com< br /></p>
+                    <p>Email: xxxxxxxx@gmail.com< br /></p>
                     <p className='text-xs'>Escreva para mim apertando a tecla "M" em seu teclado</p>
                 </span>
                 <span className='p-4 text-right mt-2'>
@@ -35,7 +35,7 @@ const HomeContactInfo = ({ bgColorStage }) => {
                     <p className='text-xs'>Acesse apertando a tecla "L" em seu teclado</p>
                 </span>
                 <span className='p-4 text-left mt-2'>
-                    +55 (11) 98276-7685
+                    +55 (11) 9XXXX-XXXX
                 </span>
                 <span className='p-4 text-right mt-2'>
                     <p>RodrigoAndrad @ Github<br /></p>
