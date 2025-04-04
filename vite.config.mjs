@@ -5,4 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [tailwindcss(), react()],
   assetsInclude: ["**/*.glb"],
+  base: '/custom-3d-portifolio/'
 })

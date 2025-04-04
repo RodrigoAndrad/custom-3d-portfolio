@@ -14,9 +14,9 @@ If you are developing a production application, we recommend using TypeScript an
 
 ## TODOs:
 1 - Arrumar o player de audio
-    1.1 - Em lowres as musicas não tocam em looping
-    1.2 - Arrumar o mute quando troca de faixa no hires
-    1.3 - Arrumar a mudança de resolução do audio
+    1.1 - Em lowres as musicas não tocam em looping - ok?
+    1.2 - Arrumar o mute quando troca de faixa no highres - ok?
+    1.3 - Arrumar a mudança de resolução do audio - ok?
 2 - Ações nas seleções dos objetos
     2.1 - Solucionar a questão dos eventhandlers no canvas
     2.2 - Esconder objetos indesejados na cena

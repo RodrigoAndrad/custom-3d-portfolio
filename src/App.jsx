@@ -12,7 +12,7 @@ const App = () => {
   const [bgColorStage, setBgColorStage] = useState(0);
   return (
     <main className='h-screen w-screen'>
-      <Router>
+      <Router basename="/custom-3d-portifolio/">
         <Navbar isRotating={isRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage} />
         <Routes>
           <Route path='/' element={
