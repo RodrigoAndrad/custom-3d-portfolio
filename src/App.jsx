@@ -2,25 +2,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState } from "react"
 import { Home, About, Projects, Contact } from "./pages"
 import Navbar from "./components/Navbar"
+import MusicPlayer from './components/music-player/MusicPlayer';
 
 const App = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(false);
+  const [isHiResSound, setIsHiResSound] = useState(true);
   const [bgColorStage, setBgColorStage] = useState(0);
   return (
     <main className='h-screen w-screen'>
       <Router>
-        <Navbar isRotating={isRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage}/>
+        <Navbar isRotating={isRotating} bgColorStage={bgColorStage} setBgColorStage={setBgColorStage} />
         <Routes>
           <Route path='/' element={
-            <Home 
-              isRotating={isRotating} 
-              setIsRotating={setIsRotating} 
-              isPlaying={isPlaying}
-              setIsPlaying={setIsPlaying}
-              bgColorStage={bgColorStage} 
-              setBgColorStage={setBgColorStage}/>} 
-            />
+            <Home
+              isRotating={isRotating}
+              setIsRotating={setIsRotating}
+              bgColorStage={bgColorStage}
+              setBgColorStage={setBgColorStage} />}
+          />
           <Route
             path='/*'
             element={
@@ -34,6 +35,15 @@ const App = () => {
             }
           />
         </Routes>
+        <MusicPlayer
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          isMuted={isMuted}
+          setIsMuted={setIsMuted}
+          isHiResSound={isHiResSound}
+          // isHiResSound={false}
+          setIsHiResSound={setIsHiResSound}
+        />
       </Router>
     </main>
   )

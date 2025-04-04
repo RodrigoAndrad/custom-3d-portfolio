@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-import PortfolioThemeConfig from '../constants/SiteThemeConfig';
+import PortfolioThemeConfig from '../../constants/SiteThemeConfig';
 
 
 const HomeContactInfo = ({ bgColorStage }) => {

@@ -6,34 +6,34 @@ import TunaFish from '../models/TunaFish';
 import { useNavigate } from 'react-router-dom'
 
 
-const Navbar = ({isRotating, bgColorStage, ...props}) => {
+const Navbar = ({ isRotating, bgColorStage, ...props }) => {
   const navigate = useNavigate();
-  
+
   const handleKeyDown = (e) => {
-    if (e.key === 's' || e.key === 'S'){
+    if (e.key === 's' || e.key === 'S') {
       navigate('/about')
-    } else if (e.key === 'p' || e.key === 'P'){
+    } else if (e.key === 'p' || e.key === 'P') {
       navigate('/projects')
-    } else if (e.key === 'h' || e.key === 'H'){
+    } else if (e.key === 'h' || e.key === 'H') {
       navigate('/')
-    } else if (e.key === 'm' || e.key === 'M'){
+    } else if (e.key === 'm' || e.key === 'M') {
       navigate('/mail-me')
-    } else if (e.key === 'l' || e.key === 'L'){
+    } else if (e.key === 'l' || e.key === 'L') {
       navigate('/linkedin')
-    } else if (e.key === 'g' || e.key === 'G'){
+    } else if (e.key === 'g' || e.key === 'G') {
       navigate('/github')
-    } else if (e.key === 'd' || e.key === 'D'){
+    } else if (e.key === 'd' || e.key === 'D') {
       navigate('/download-cv-form')
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    return ()=>{
+    return () => {
       document.removeEventListener('keydown', handleKeyDown);
     }
-  },[handleKeyDown])
-  
+  }, [handleKeyDown])
+
 
   return (
     <header className='flex justify-between items-center w-full absolute top-0 bg-transparent right-0 left-0 z-110 select-none'>
@@ -41,21 +41,25 @@ const Navbar = ({isRotating, bgColorStage, ...props}) => {
         <Canvas className={`z-110 w-[55%] h-screen bg-transparent`}
           camera={{ near: 0.1, far: 1000 }}
         >
-          <Suspense fallback={<Loader size={20}/>} >
+          <Suspense fallback={<Loader size={20} />} >
             <directionalLight position={[1, 1, 1]} intensity={2} />
             <ambientLight intensity={0.5} />
             {<hemisphereLight skyColor={'#b1e1ff'} groundColor={'#000000'} intensity={1} />}
-            <TunaFish className scale={[1, 1, 1]} position={[0,0,0]}
+            <TunaFish className scale={[1, 1, 1]} position={[0, 0, 0]}
               rotation={[0, 29.45, 0]} isRotating={isRotating} />
           </Suspense>
         </Canvas>
         <p className="blue-gradient_text mr-5" style={{ fontFamily: "Shojumaru" }}>Rodrigo Andrade</p>
       </NavLink>
-      <nav className='inline-block text-lg gap-27 font-medium w-full items-center text-right' style={{ fontFamily: 'Shojumaru' }}>
-        <NavLink to='/about' className={`ml-20 mr-10 ${({ isActive }) => isActive ? "text-blue-600" : "text-black"}`}>
+      <nav className='inline-block text-4xl gap-27 font-medium w-full items-center text-right' style={{ fontFamily: 'Shojumaru' }}>
+        <NavLink to='/about' className={`ml-20 mr-10 ${({ isActive }) => isActive ? "text-blue-600" : "text-black"}`}
+          // style={{ '-webkit-text-stroke': '1px black' }}
+        >
           Sobre
         </NavLink>
-        <NavLink to='/projects' className={`ml-10 mr-30 ${({ isActive }) => isActive ? "text-blue-600" : "text-black"}`}>
+        <NavLink to='/projects' className={`ml-10 mr-30 ${({ isActive }) => isActive ? "text-blue-600" : "text-black"}`}
+          // style={{ '-webkit-text-stroke': '1px black' }}
+        >
           Projetos
         </NavLink>
       </nav>

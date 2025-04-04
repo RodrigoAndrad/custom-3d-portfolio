@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Shojumaru&display=swap");
 @import "tailwindcss";
 
+/* REMOVA-ME */
+/* Toggle A */
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #646cff;
+}
+/* REMOVA-ME */
+/* Até aqui */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
